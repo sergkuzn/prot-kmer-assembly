@@ -75,7 +75,3 @@ which has 2 services:
 we left out the option to parallelize Greedy SCS initial pairwise calculations in the Full Stack Application. 
 
 
-# Test Coverage
-To run tests: ?
-
-
