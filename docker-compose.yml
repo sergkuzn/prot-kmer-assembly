@@ -1,0 +1,36 @@
+services:
+  api:
+    build:
+      context: .
+
+    ports:
+      # if port 8888 is not available on your machine replace below with "your_port_number:8888"
+      # WARNING: If you do this, you will need to change the axios.defaults.baseURL on line 20 in /frontend2/dna-to-protein/src/App.vue 
+      # There is no other way around this. Passing environmental variables via docker-compose does not work well with Vue.js.
+      # It is best to try to free this port on your machine. If that isn't possible, contact Michael Lee.
+      - "8888:8888"
+
+    # remove the volumes before submission...they are just here to speed up development and avoid rebuilding the images every time
+    volumes:
+      - .:/app:rw
+
+    command: python3 ./group3_package/src/api/app.py --port=8888
+
+  # selenium:
+  #   image: selenium/standalone-chrome
+  #   ports:
+  #     - "4444:4444"
+
+  frontend:
+    build:
+      context: ./frontend2/dna-to-protein
+
+    ports:
+      # if port 8080 is not available on your machine replace below with "your_port_number:8080".
+      - "8080:8080"
+
+    # remove the volumes before submission...they are just here to speed up development and avoid rebuilding the images every time
+    volumes:
+      - ./frontend2/dna-to-protein:/app:rw
+      
+    command: npm run serve
