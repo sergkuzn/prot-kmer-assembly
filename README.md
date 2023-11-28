@@ -1,3 +1,8 @@
+# Info
+This work was created by several people as a university course project. I was mainly in charge of the protein assembly algorithm ([scs.py](https://github.com/sergkuzn/prot-kmer-assembly/blob/main/group3_package/src/scs.py), [scs_utils.py](https://github.com/sergkuzn/prot-kmer-assembly/blob/main/group3_package/src/scs_utils.py), [heap_utils](https://github.com/sergkuzn/prot-kmer-assembly/blob/main/group3_package/src/heap_utils.py)). Additionally, I implemented interaction with the website of a service using Selenium since its officia API was working pourly ([blast.py](https://github.com/sergkuzn/prot-kmer-assembly/blob/main/group3_package/src/blast.py)). The project remains unaltered since its submission and is published here in the same state without being polished.
+
+----- End of Info -----
+
 # To start the backend server and frontend server:
 - first check that the ports specified in docker-compose.yml are available on your machine.
 - For production (Bruce): ```docker-compose up --build``` 
